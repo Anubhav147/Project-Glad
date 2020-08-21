@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+         html {
+         box-sizing: border-box;
+         }
+         *, *:before, *:after {
+         box-sizing: inherit;
+         }
+         body {
+         font-family: Arial, Helvetica, sans-serif;
+         margin: 0;
+         }
+         #headerRow{
+         width: 95%;
+         background-color: lightgray;
+         border-radius: 5px;
+         padding: 10px;
+         border: 2px solid black;
+         margin-left: 30px;
+         }
+         #tabrow{
+         width: 45%;
+         background-color: lightgray;
+         border-radius: 5px;
+         padding: 10px;
+         border: 2px solid black;
+         margin-left: 400px;
+         text-align:center
+         }
+         .column {
+         float: left;
+         width: 50%;
+         margin-bottom: 16px;
+         padding: 0 8px;
+         }
+         .card {
+         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+         margin: 8px;
+         border-radius: 5px;
+         text-align: center;
+         background-color: lightgray;
+         }
+         .about-section {
+         padding: 20px;
+         text-align: center;
+         border-radius: 2px;
+         border-color: lightskyblue;
+         background-color: lightgrey;
+         color: black;
+         }
+         .container {
+         padding: 0 16px;
+         }
+         .container::after, .row::after {
+         content: "";
+         clear: both;
+         display: table;
+         }
+         .title {
+         color: grey;
+         }
+         .button {
+         border: none;
+         outline: 0;
+         display: inline-block;
+         padding: 8px;
+         color: black;
+         background-color: lightgrey;
+         text-align: center;
+         cursor: pointer;
+         width: 100%;
+         }
+         .button:hover {
+         background-color: #555;
+         }
+         @media screen and (max-width: 650px) {
+         .column {
+         width: 100%;
+         display: block;
+         }
+         }
+      </style>
+   </head>
+   <body>
+     <div id = "headerRow">
+         <h2 style = "text-align: center;">About us</h2>
+      </div>
+      <h2 style="text-align:center"> &nbsp; &nbsp; We are small bunch of people with a vision to solve the problems of customers in insurance industry <br/> 
+        and offer great service and quality insurance plans.</h2>
+      <br/><br/>
+      <h1 id="tabrow">Our Team</h1>
+      <div class="row">
+         <div class="column">
+            <div class="card">
+               <div class="container">
+                  <h2>Smriti Tripathi</h2>
+                  <p class="title">Team Lead</p>
+                  <p>[ABOUT SMRITI]</p>
+                  <p>abc@abc.com</p>
+                  <p><button class="button">Contact</button></p>
+               </div>
+            </div>
+         </div>
+         <div class="column">
+            <div class="card">
+               <div class="container">
+                  <h2>Archit</h2>
+                  <p class="title">Team Member</p>
+                  <p>[ABOUT Archit]</p>
+                  <p>abc@abc.com</p>
+                  <p><button class="button">Contact</button></p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="column">
+            <div class="card">
+               <div class="container">
+                  <h2>Amit Mishra</h2>
+                  <p class="title">Team Member</p>
+                  <p>[ABOUT Amit]</p>
+                  <p>abc@abc.com</p>
+                  <p><button class="button">Contact</button></p>
+               </div>
+            </div>
+         </div>
+         <div class="column">
+            <div class="card">
+               <div class="container">
+                  <h2>Nihal</h2>
+                  <p class="title">Team Member</p>
+                  <p>[ABOUT Nihal]</p>
+                  <p>abc@abc.com</p>
+                  <p><button class="button">Contact</button></p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
