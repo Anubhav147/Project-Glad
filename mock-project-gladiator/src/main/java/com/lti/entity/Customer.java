@@ -21,11 +21,8 @@ public class Customer {
 	@GeneratedValue
 	private int id;
 	
-	@Column(name = "first_name", nullable=false)
-	private String firstName;
-	
-	@Column(name = "last_name", nullable=false)
-	private String lastName;
+	@Column(name = "name", nullable=false)
+	private String name;
 	
 	@Column(name = "email", nullable=false, unique = true)
 	private String emailId;
@@ -37,7 +34,7 @@ public class Customer {
 	private int contactNo;
 	
 	@OneToOne(cascade = CascadeType.PERSIST)
-	@JoinColumn(name="id")
+	@JoinColumn(name="address_id")
 	private Address address;
 	
 	public int getId() {
@@ -48,20 +45,12 @@ public class Customer {
 		this.id = id;
 	}
 
-	public String getFirstName() {
-		return firstName;
+	public String getName() {
+		return name;
 	}
 
-	public void setFirst_name(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getEmailId() {

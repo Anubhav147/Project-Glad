@@ -1,5 +1,7 @@
 package com.lti.entity;
 
+import java.time.LocalDate;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,8 +13,8 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "LOGIN")
-public class Login {
+@Table(name = "USER")
+public class User {
 	
 	@Id
 	@SequenceGenerator(name = "id", initialValue = 1, allocationSize = 1)
@@ -25,9 +27,35 @@ public class Login {
 	@Column(name = "password", nullable = false)
 	private String password;
 	
+	@Column(name = "role", nullable = false)
+	private String role;
+	
+	@Column(name = "last_password_set", nullable = false)
+	private LocalDate lastPasswordSet;
+	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "customer_id")
-	private Customer customer;
+	private Customer customer; //can be null in case of admin as admin will not have any customer_id 
+	//but in case of customer it will not be null as it is primary key and every customer will have one
+	
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
+	public LocalDate getLastPasswordSet() {
+		return lastPasswordSet;
+	}
+	public void setLastPasswordSet(LocalDate lastPasswordSet) {
+		this.lastPasswordSet = lastPasswordSet;
+	}
+	public Customer getCustomer() {
+		return customer;
+	}
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
 	
 	public int getId() {
 		return id;

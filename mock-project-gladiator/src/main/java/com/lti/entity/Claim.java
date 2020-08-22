@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -37,8 +38,9 @@ public class Claim {
 	@Column(name = "contact_no", nullable = false)
 	private int contactNo;
 
-	@Column(name = "customer_no", nullable = false)
-	private int customerNo;
+	@ManyToOne
+	@JoinColumn(name = "customer_id")
+	private Customer customer;
 	
 	@OneToOne()
 	@JoinColumn(name = "id")
@@ -100,12 +102,14 @@ public class Claim {
 		this.contactNo = contactNo;
 	}
 
-	public int getCustomerNo() {
-		return customerNo;
+	public Customer getCustomer() {
+		return customer;
 	}
 
-	public void setCustomerNo(int customerNo) {
-		this.customerNo = customerNo;
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
+
+	
 
 }
