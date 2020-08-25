@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class InsurancePlan {
 	
 	@Id
-	@SequenceGenerator(name = "id", initialValue = 1, allocationSize=1)
+	@SequenceGenerator(name = "insurance_id", initialValue = 1, allocationSize=1)
 	@GeneratedValue
 	private int id;
 	

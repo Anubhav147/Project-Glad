@@ -19,7 +19,7 @@ public class EstimateServiceImpl implements EstimateService {
 	@Override
 	public double estimateClaim(Premium premium) {
 		Premium newPremium = new Premium();
-		double estimatedAmount=0.0;
+		double claimAmt = estimateRepository.estimateClaimAmount(premium);
 		System.out.println("in service");
 		try{
 			System.out.println("in service try");
@@ -33,13 +33,11 @@ public class EstimateServiceImpl implements EstimateService {
 			newPremium.setLossSuffered(premium.getLossSuffered());
 			newPremium.setTotalCostOfVehicle(premium.getTotalCostOfVehicle());
 			estimateRepository.save(newPremium);
-			//formula = ((loss_suffered*amount)/total_cost_of_vehicle)*age*depreciation_rate;
-			estimatedAmount = ((premium.getLossSuffered() * premium.getAmount()) / premium.getTotalCostOfVehicle())
-				* premium.getAge() * premium.getDepreciationRate();
+			
 	}
 		catch(EstimateServiceException e) {
 			System.out.println(e.getMessage());
 		}
-		return estimatedAmount;
+		return claimAmt;
 	}
 }

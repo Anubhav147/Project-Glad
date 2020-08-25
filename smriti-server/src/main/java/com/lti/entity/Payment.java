@@ -16,7 +16,7 @@ import javax.persistence.Table;
 @Table(name = "PAYMENT")
 public class Payment {
 	@Id
-	@SequenceGenerator(name = "id", initialValue = 1, allocationSize = 1)
+	@SequenceGenerator(name = "payment_id", initialValue = 1, allocationSize = 1)
 	@GeneratedValue
 	private int id;
 
@@ -26,7 +26,7 @@ public class Payment {
 	@Column(name = "payment_date")
 	private LocalDate date;
 
-	@Column(name = "amount")
+	@Column(name = "payment_amount")
 	private double amount;
 
 	@OneToOne(cascade = CascadeType.ALL)

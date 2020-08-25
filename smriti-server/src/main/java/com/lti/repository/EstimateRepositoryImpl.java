@@ -16,14 +16,18 @@ public class EstimateRepositoryImpl implements EstimateRepository {
 	
 	@Override
 	@Transactional
-	public void save(Object obj) {
-		System.out.println("in save");
-		entityManager.merge(obj);
+	public void save(Premium premium) {
+		//System.out.println("in save");
+		entityManager.merge(premium);
 	}
 	
 	@Override
 	public double estimateClaimAmount(Premium premium) {
-		return 0.0;
+		double estimatedAmount=0.0;
+		//formula = ((loss_suffered*amount)/total_cost_of_vehicle)*age*depreciation_rate;
+		estimatedAmount = ((premium.getLossSuffered() * premium.getAmount()) / premium.getTotalCostOfVehicle())
+			* premium.getAge() * (premium.getAge()*2);
+		return estimatedAmount;
 	}
 	
 }

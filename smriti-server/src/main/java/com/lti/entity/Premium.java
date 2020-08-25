@@ -8,12 +8,14 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "PREMIUM_ESTIMATE_MOTOR")
 public class Premium {
 
 	@Id
-	@SequenceGenerator(name = "id", initialValue = 1, allocationSize = 1)
+	@SequenceGenerator(name = "premium_id", initialValue = 1, allocationSize = 1)
 	@GeneratedValue
 	private int id;
 
@@ -41,6 +43,7 @@ public class Premium {
 	@Column(name = "total_cost_of_vehicle")
 	private double totalCostOfVehicle;
 
+	
 	public double getTotalCostOfVehicle() {
 		return totalCostOfVehicle;
 	}
@@ -57,6 +60,7 @@ public class Premium {
 		this.duration = duration;
 	}
 
+	@JsonIgnore
 	public double getLossSuffered() {
 		return lossSuffered;
 	}
@@ -72,7 +76,8 @@ public class Premium {
 	public void setId(int id) {
 		this.id = id;
 	}
-
+	
+	@JsonIgnore
 	public String getType() {
 		return type;
 	}
@@ -104,7 +109,8 @@ public class Premium {
 	public void setAmount(double amount) {
 		this.amount = amount;
 	}
-
+	
+	@JsonIgnore
 	public int getDepreciationRate() {
 		return depreciationRate;
 	}
@@ -112,5 +118,14 @@ public class Premium {
 	public void setDepreciationRate(int depreciationRate) {
 		this.depreciationRate = depreciationRate;
 	}
+
+	@Override
+	public String toString() {
+		return "Premium [id=" + id + ", type=" + type + ", age=" + age + ", model=" + model + ", amount=" + amount
+				+ ", depreciationRate=" + depreciationRate + ", duration=" + duration + ", lossSuffered=" + lossSuffered
+				+ ", totalCostOfVehicle=" + totalCostOfVehicle + "]";
+	}
+	
+	
 
 }

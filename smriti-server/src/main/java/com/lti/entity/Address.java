@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class Address {
 	
 	@Id
-	@SequenceGenerator(name = "id", initialValue = 1, allocationSize=1)
+	@SequenceGenerator(name = "addr_id", initialValue = 1, allocationSize=1)
 	@GeneratedValue
 	private int id;
 	

@@ -3,8 +3,10 @@ package com.lti.entity;
 
 import java.time.LocalDate;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -19,7 +21,7 @@ import javax.persistence.Table;
 public class Claim {
 
 	@Id
-	@SequenceGenerator(name = "id", initialValue = 1, allocationSize = 1)
+	@SequenceGenerator(name = "claim_id", initialValue = 1, allocationSize = 1)
 	@GeneratedValue
 	private int id;
 
@@ -38,12 +40,12 @@ public class Claim {
 	@Column(name = "contact_no")
 	private int contactNo;
 
-	@ManyToOne
-	@JoinColumn(name = "customer_no")
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "customer_id")
 	private Customer customer;
 	
-	@OneToOne()
-	@JoinColumn(name = "policy_no")
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "policy_id")
 	private Policy policy;
 
 	public Policy getPolicy() {

@@ -6,7 +6,7 @@ import com.lti.entity.Premium;
 
 public interface EstimateRepository {
 
-	void save(Object obj);
+	void save(Premium premium);
 
 	double estimateClaimAmount(Premium premium);
 

@@ -16,7 +16,7 @@ public class EstimateController {
 	@Autowired
 	private EstimateService estimateService;
 	
-	@PostMapping(path = "/estimate", consumes = "application/json" , produces = "application/json")
+	@PostMapping(path = "/estimate", consumes = "application/json")
 	private void estimateClaimAmt(@RequestBody Premium premium) {
 		System.out.println("in controller");
 		double estimatedAmt = estimateService.estimateClaim(premium);

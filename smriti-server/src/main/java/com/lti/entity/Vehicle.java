@@ -2,8 +2,10 @@ package com.lti.entity;
 
 import java.time.LocalDate;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -18,7 +20,7 @@ public class Vehicle {
 	
 	
 	@Id
-	@SequenceGenerator(name = "id", initialValue = 1, allocationSize=1)
+	@SequenceGenerator(name = "vehicle_id", initialValue = 1, allocationSize=1)
 	@GeneratedValue
 	private int id;
 	
@@ -49,10 +51,10 @@ public class Vehicle {
 	@Column(name = "engine_type")
 	private String engineType;
 	
-	@Column(name = "lat_renew_date")
+	@Column(name = "last_renew_date")
 	private LocalDate lastRenewDate;
 	
-	@ManyToOne()
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "customer_id")
 	private Customer customer;
 	

@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Policy {
 
 	@Id
-	@SequenceGenerator(name = "id", initialValue = 1, allocationSize = 1)
+	@SequenceGenerator(name = "policy_id", initialValue = 1, allocationSize = 1)
 	@GeneratedValue
 	private int id;
 
@@ -33,10 +33,6 @@ public class Policy {
 	@JsonIgnore
 	@Column(name = "expiry_date")
 	private LocalDate expiryDate;
-
-	public void setPlanAmount(double planAmount) {
-		this.planAmount = planAmount;
-	}
 
 	@Column(name = "duration")
 	private int duration;
@@ -106,10 +102,10 @@ public class Policy {
 	public double getPlanAmount() {
 		return planAmount;
 	}
-
-	public void setPlan_amount(double planAmount) {
+	public void setPlanAmount(double planAmount) {
 		this.planAmount = planAmount;
 	}
+
 
 	public Customer getCustomer() {
 		return customer;
