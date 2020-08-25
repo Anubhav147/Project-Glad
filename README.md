@@ -10,7 +10,7 @@
 > To install this example application, run the following commands:
 
 ```bash
-    git clone https://github.com/nihalrai/Project-Gladiator.git
+    git clone https://github.com/SmritiTr/Project-Glad.git
 ```
 
 > After successful clone of the git repo, run following command
