@@ -7,6 +7,9 @@ import { ClaimComponent } from './claim/claim.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { BuyInsuranceComponent } from './buy-insurance/buy-insurance.component';
 import { LoginComponent } from './login/login.component';
+import { NavigatorComponent } from './navigator/navigator.component';
+import { PlansComponent } from './plans/plans.component';
+import { RenewComponent } from './renew/renew.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { LoginComponent } from './login/login.component';
     ClaimComponent,
     RegistrationComponent,
     BuyInsuranceComponent,
-    LoginComponent
+    LoginComponent,
+    NavigatorComponent,
+    PlansComponent,
+    RenewComponent
   ],
   imports: [
     BrowserModule,
