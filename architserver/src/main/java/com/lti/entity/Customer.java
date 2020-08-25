@@ -21,34 +21,21 @@ public class Customer {
 	@GeneratedValue
 	private int id;
 	
-	@Column(name = "name", nullable=false)
+	@Column(name = "name")
 	private String name;
 	
-	@Column(name = "email", nullable=false, unique = true)
+	@Column(name = "email", unique = true)
 	private String emailId;
 	
-	@Column(name = "dateOfBirth", nullable=false)
+	@Column(name = "dateOfBirth")
 	private LocalDate dateOfBirth;
 	
-	@Column(name = "contact_no", nullable=false)
-	private int contactNo;
-	
-	@Column(name = "password", nullable = false)
-	private String password;
+	@Column(name = "contact_no")
+	private long contactNo;
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="address_id")
 	private Address address;
-	
-	
-	
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
 
 	public int getId() {
 		return id;
@@ -82,11 +69,11 @@ public class Customer {
 		this.dateOfBirth = dateOfBirth;
 	}
 
-	public int getContactNo() {
+	public long getContactNo() {
 		return contactNo;
 	}
 
-	public void setContactNo(int contactNo) {
+	public void setContactNo(long contactNo) {
 		this.contactNo = contactNo;
 	}
 

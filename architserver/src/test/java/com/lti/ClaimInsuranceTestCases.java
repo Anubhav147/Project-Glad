@@ -39,7 +39,6 @@ class ClaimInsuranceTestCases {
 		cust.setEmailId("ankur.singh@gmail.com");
 		cust.setDateOfBirth(LocalDate.of(1996, 9, 16));
 		cust.setContactNo(876543219);
-		cust.setPassword("789654");
 		
 		Address addr = new Address();
 		addr.setCity("Azamgarh");

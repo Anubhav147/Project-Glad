@@ -46,7 +46,6 @@ class BuyInsuranceTestCases {
 		cust.setEmailId("aryany996699@gmail.com");
 		cust.setDateOfBirth(LocalDate.of(1997, 11, 19));
 		cust.setContactNo(975883345);
-		cust.setPassword("123456");
 		
 		Address addr = new Address();
 		addr.setCity("Mainpuri");

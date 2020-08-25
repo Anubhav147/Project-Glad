@@ -24,27 +24,27 @@ public class Claim {
 	@GeneratedValue
 	private int id;
 
-	@Column(name = "claim_date", nullable = false)
+	@Column(name = "claim_date")
 	private LocalDate date;
 
-	@Column(name = "status", nullable = false)
+	@Column(name = "status")
 	private String status;
 
-	@Column(name = "amount", nullable = false)
+	@Column(name = "amount")
 	private double amount;
 
-	@Column(name = "reason", nullable = false)
+	@Column(name = "reason")
 	private String reason;
 
-	@Column(name = "contact_no", nullable = false)
-	private int contactNo;
+	@Column(name = "contact_no")
+	private long contactNo;
 
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "customer_id")
 	private Customer customer;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "id")
+	@JoinColumn(name = "policy_id")
 	private Policy policy;
 
 	public Policy getPolicy() {
@@ -95,11 +95,11 @@ public class Claim {
 		this.reason = reason;
 	}
 
-	public int getContactNo() {
+	public long getContactNo() {
 		return contactNo;
 	}
 
-	public void setContactNo(int contactNo) {
+	public void setContactNo(long contactNo) {
 		this.contactNo = contactNo;
 	}
 
@@ -109,6 +109,12 @@ public class Claim {
 
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
+	}
+
+	@Override
+	public String toString() {
+		return "Claim [id=" + id + ", date=" + date + ", status=" + status + ", amount=" + amount + ", reason=" + reason
+				+ ", contactNo=" + contactNo + ", customer=" + customer + ", policy=" + policy + "]";
 	}
 
 	

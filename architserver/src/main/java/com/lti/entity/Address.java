@@ -13,14 +13,14 @@ import javax.persistence.Table;
 public class Address {
 	
 	@Id
-	@SequenceGenerator(name = "id", initialValue = 1, allocationSize=1)
+	@SequenceGenerator(name = "addr_id", initialValue = 1, allocationSize=1)
 	@GeneratedValue
 	private int id;
 	
-	@Column(name = "city", nullable=false)
+	@Column(name = "city")
 	private String city;
 	
-	@Column(name = "pincode", nullable=false)
+	@Column(name = "pincode")
 	private int pincode;
 	
 	@Column(name = "landMark")

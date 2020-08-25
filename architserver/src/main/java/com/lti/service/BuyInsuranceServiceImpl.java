@@ -4,6 +4,7 @@ package com.lti.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.lti.entity.Customer;
 import com.lti.entity.Vehicle;
 import com.lti.exception.InsuranceServiceException;
 import com.lti.repository.BuyInsuranceRepository;
@@ -21,5 +22,10 @@ public class BuyInsuranceServiceImpl implements BuyInsuranceService {
 			throw new InsuranceServiceException("This Vehicle is already Insured, you have to renew the insurance");
 		}
 	}
+
+	@Override
+	public Customer findById(int id) {
+		return buyInsuranceRepo.findById(id);
+}
 	
 }

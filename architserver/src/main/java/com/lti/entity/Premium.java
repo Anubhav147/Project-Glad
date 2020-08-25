@@ -17,20 +17,53 @@ public class Premium {
 	@GeneratedValue
 	private int id;
 
-	@Column(name = "type", nullable = false)
+	@Column(name = "vehicle_type")
 	private String type;
 
-	@Column(name = "age", nullable = false)
+	@Column(name = "age")
 	private int age;
 
-	@Column(name = "model", nullable = false)
+	@Column(name = "model")
 	private String model;
 
-	@Column(name = "amount", nullable = false)
+	@Column(name = "amount")
 	private double amount;
 
-	@Column(name = "depreciationRate", nullable = false)
+	@Column(name = "depreciationRate")
 	private int depreciationRate;
+	
+	@Column(name = "duration")
+	private int duration;
+	
+	@Column(name = "loss_suffered")
+	private double lossSuffered;
+	
+	@Column(name = "total_cost_of_vehicle")
+	private double totalCostOfVehicle;
+
+	public double getTotalCostOfVehicle() {
+		return totalCostOfVehicle;
+	}
+
+	public void setTotalCostOfVehicle(double totalCostOfVehicle) {
+		this.totalCostOfVehicle = totalCostOfVehicle;
+	}
+
+	public int getDuration() {
+		return duration;
+	}
+
+	public void setDuration(int duration) {
+		this.duration = duration;
+	}
+
+	public double getLossSuffered() {
+		return lossSuffered;
+	}
+
+	public void setLossSuffered(double lossSuffered) {
+		this.lossSuffered = lossSuffered;
+	}
 
 	public int getId() {
 		return id;
