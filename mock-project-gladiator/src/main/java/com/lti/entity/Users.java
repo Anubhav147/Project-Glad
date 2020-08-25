@@ -13,24 +13,24 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "USER")
-public class User {
+@Table(name = "USERS")
+public class Users {
 	
 	@Id
 	@SequenceGenerator(name = "id", initialValue = 1, allocationSize = 1)
 	@GeneratedValue
 	private int id;
 	
-	@Column(name = "emailId", nullable = false)
+	@Column(name = "emailId")
 	private String emailId;
 	
-	@Column(name = "password", nullable = false)
+	@Column(name = "password")
 	private String password;
 	
-	@Column(name = "role", nullable = false)
+	@Column(name = "role")
 	private String role;
 	
-	@Column(name = "last_password_set", nullable = false)
+	@Column(name = "last_password_set")
 	private LocalDate lastPasswordSet;
 	
 	@OneToOne(cascade = CascadeType.ALL)
