@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { NavigatorComponent } from './navigator/navigator.component';
 import { PlansComponent } from './plans/plans.component';
 import { RenewComponent } from './renew/renew.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { RenewComponent } from './renew/renew.component';
     LoginComponent,
     NavigatorComponent,
     PlansComponent,
-    RenewComponent
+    RenewComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,
