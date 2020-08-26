@@ -8,12 +8,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "CUSTOMER")
+@NamedQuery(name = "fetch-all", query = "select c from Customer c")
+@NamedQuery(name = "is-customer-present", query = "select count(c.emailId) from Customer c where c.emailId = :em")
 public class Customer {
 	
 	@Id
