@@ -3,6 +3,9 @@ package com.lti.controller;
 import java.time.LocalDate;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
+import org.springframework.mail.MailException;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,6 +17,7 @@ import com.lti.entity.Customer;
 import com.lti.entity.Address;
 import com.lti.entity.User;
 import com.lti.exception.UserServiceException;
+import com.lti.service.EmailService;
 import com.lti.service.UserService;
 
 @RestController
@@ -22,6 +26,9 @@ public class UserRegistrationController {
 	
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private EmailService emailService;
 	
 	@PostMapping(path = "/register", consumes = "application/json", produces = "application/json")
 	public StatusDto register(@RequestBody CustomerDto customerDto) {
@@ -48,25 +55,42 @@ public class UserRegistrationController {
             user.setPassword(customerDto.getPassword());
             user.setCustomer(customer);
             user.setLastPasswordSet(LocalDate.now());
+            user.setCreatedOn(LocalDate.now());
             user.setRole("USER");
             
             userService.register(user);
-			
+            
+			try {
+	            SimpleMailMessage registeredMail = new SimpleMailMessage();
+	            registeredMail.setFrom("nk.theraja@gmail.com"); // email of sender
+	            registeredMail.setTo("niihalrai@gmail.com");
+	            registeredMail.setSubject("Registered successfully");
+	            registeredMail.setText("Thanks for signing up on General Insurance portal");
+				
+	            emailService.sendEmail(registeredMail);
+	            
+			}catch(MailException e){
+				throw new UserServiceException("Error occured during sending email!");
+			}
+            
 			StatusDto status = new StatusDto();
 			status.setMessage("Registered successfully!");
 			status.setStatus(StatusDto.StatusType.SUCCESS);
 			return status;
 
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (UserServiceException e) {
 			StatusDto status = new StatusDto();
-
-			if (e instanceof UserServiceException) {
-				status.setMessage(e.getMessage());
-			} else {
-				status.setMessage(e.getMessage());
-			}
-
+			status.setMessage(e.getMessage());
+			status.setStatus(StatusDto.StatusType.FAILURE);
+			return status;
+		} catch (DataAccessException e) {
+			StatusDto status = new StatusDto();
+			status.setMessage(e.getMessage());
+			status.setStatus(StatusDto.StatusType.FAILURE);
+			return status;
+		} catch (Exception e) {
+			StatusDto status = new StatusDto();
+			status.setMessage(e.getMessage());
 			status.setStatus(StatusDto.StatusType.FAILURE);
 			return status;
 		}
