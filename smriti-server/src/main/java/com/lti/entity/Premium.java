@@ -43,7 +43,6 @@ public class Premium {
 	@Column(name = "total_cost_of_vehicle")
 	private double totalCostOfVehicle;
 
-	
 	public double getTotalCostOfVehicle() {
 		return totalCostOfVehicle;
 	}

@@ -38,7 +38,7 @@ public class Claim {
 	private String reason;
 
 	@Column(name = "contact_no")
-	private int contactNo;
+	private long contactNo;
 
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "customer_id")
@@ -96,12 +96,12 @@ public class Claim {
 		this.reason = reason;
 	}
 
-	public int getContactNo() {
+	public long getContactNo() {
 		return contactNo;
 	}
 
-	public void setContactNo(int contactNo) {
-		this.contactNo = contactNo;
+	public void setContactNo(long l) {
+		this.contactNo = l;
 	}
 
 	public Customer getCustomer() {

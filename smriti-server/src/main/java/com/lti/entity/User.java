@@ -14,7 +14,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "TBL_USER")
-public class Users {
+public class User {
 	
 	@Id
 	@SequenceGenerator(name = "user_id", initialValue = 1, allocationSize = 1)

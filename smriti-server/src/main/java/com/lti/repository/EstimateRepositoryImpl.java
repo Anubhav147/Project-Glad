@@ -25,8 +25,8 @@ public class EstimateRepositoryImpl implements EstimateRepository {
 	public double estimateClaimAmount(Premium premium) {
 		double estimatedAmount=0.0;
 		//formula = ((loss_suffered*amount)/total_cost_of_vehicle)*age*depreciation_rate;
-		estimatedAmount = ((premium.getLossSuffered() * premium.getAmount()) / premium.getTotalCostOfVehicle())
-			* premium.getAge() * (premium.getAge()*2);
+		estimatedAmount = ((premium.getLossSuffered() * 3000) / premium.getTotalCostOfVehicle())
+			* premium.getAge() * (premium.getDepreciationRate());
 		return estimatedAmount;
 	}
 	
