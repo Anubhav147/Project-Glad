@@ -11,6 +11,7 @@ import { NavigatorComponent } from './navigator/navigator.component';
 import { PlansComponent } from './plans/plans.component';
 import { RenewComponent } from './renew/renew.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
     NavigatorComponent,
     PlansComponent,
     RenewComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    UserDashboardComponent
   ],
   imports: [
     BrowserModule,
