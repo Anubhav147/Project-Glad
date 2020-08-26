@@ -7,21 +7,26 @@
     <div class="login-box">
     <img src="../assets/image/avatar.png" class="avatar">
         <h1>Renew Insurance</h1>
-            <form (ngSubmit)="renewPlan()">
+            <form (ngSubmit)="renewPlan()" >
             <p>Policy number</p>
-            <input type="text" name="pno" placeholder="" [(ngModel)]=policy.id>
+            <input type="text" name="pno" placeholder="" [(ngModel)]=policy.id required>
+                
             <p>Mobile number</p>
-            <input type="text" name="mobile" placeholder="" [(ngModel)]=customer.contact>
+            <input type="text" name="mobile" placeholder="" [(ngModel)]=customer.contact required>
+
             <p>Email</p>
-            <input type="email" name="email" placeholder="" [(ngModel)]=customer.email>
+            <input type="email" name="email" placeholder="" [(ngModel)]=customer.email required>
+            
             <label for="plans">Plans:</label>
-            <select name="plans" id="plans" >
+            <select name="plans" id="plans" required>
+                <option selected value="">Select</option>
                 <option value="third_party" [(ngModel)]=insurance_plan.insurance_type>Third Party Liability</option>
                 <option value="comprehensive" [(ngModel)]=insurance_plan.insurance_type>Comprehensive</option>
             </select>
 
             <label for="duration">Duration</label>
-            <select name="duration" id="duration" >
+            <select name="duration" id="duration" required>
+                <option selected value="">Select</option>
                 <option value=1 [(ngModel)]=policy.duration>One Year</option>
                 <option value=2 [(ngModel)]=policy.duration>Two Year</option>
                 <option value=3 [(ngModel)]=policy.duration>Three Year</option>
@@ -36,29 +41,3 @@
     </body>
 </html>
 
-<!--<h3>Please enter below information to renew policy:</h3><br/>
-<form (ngSubmit)="renewPlan()">
-    Enter Policy Id: <input type="text" name="t1" [(ngModel)]=policy.id/><br/>
-    Enter Mobile number: <input type="text" name="t2" [(ngModel)]=customer.contact/><br/>
-    Enter Email Id: <input type="text" name="t3" [(ngModel)]=customer.email/><br/>
-
-    <h3>Select Plan Type:</h3>
-    <div class="plan-type">
-        <input type="radio" name="t1" value="Third-party liability" [(ngModel)]=insurance_plan.insurance_type/>
-        <label for="Third-party liability">Third-party liability</label><br/>
-        <input type="radio" name="t1" value="Comprehensive" [(ngModel)]=insurance_plan.insurance_type/>
-        <label for="Comprehensive">Comprehensive</label><br/>
-    </div>
-    <h3>Select Plan Duration</h3>
-    <div class="plan-duration">
-        <input type="radio" name="t1" value=1 [(ngModel)]=policy.duration/>
-        <label for="1 year">1 year</label><br/>
-        <input type="radio" name="t1" value=2 [(ngModel)]=policy.duration/>
-        <label for="2 years">2 years</label><br/>
-        <input type="radio" name="t1" value=3 [(ngModel)]=policy.duration/>
-        <label for="3 years">3 years</label><br/>
-    </div>
-
-    <button type="submit">Renew and Make Payment</button>    
-</form>
--->

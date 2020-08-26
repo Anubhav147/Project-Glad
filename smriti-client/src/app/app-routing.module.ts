@@ -10,6 +10,8 @@ import { RegistrationComponent } from './registration/registration.component';
 import { HomeComponent } from './home/home.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 //import { PlanSelectComponent } from './plan-select/plan-select.component';
+import { PaymentComponent } from './payment/payment.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 const routes: Routes = [
   {path: 'renew', component: RenewComponent},
@@ -22,6 +24,8 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   { path: '', component: HomeComponent },
   { path: 'userDashboard', component: UserDashboardComponent },
+  { path: 'adminDashboard', component: AdminDashboardComponent },
+  { path: 'payment', component: PaymentComponent }
   //{path: 'plan-select', component: PlanSelectComponent}
 ];
 

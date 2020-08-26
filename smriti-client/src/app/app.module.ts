@@ -19,6 +19,8 @@ import { HomeComponent } from './home/home.component';
 import { ModelComponent } from './model/model.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { EntityComponent } from './entity/entity.component';
+import { PaymentComponent } from './payment/payment.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +37,9 @@ import { EntityComponent } from './entity/entity.component';
     HomeComponent,
     ModelComponent,
     UserDashboardComponent,
-    EntityComponent
+    EntityComponent,
+    PaymentComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,
