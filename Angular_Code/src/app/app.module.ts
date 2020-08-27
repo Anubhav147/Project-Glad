@@ -12,6 +12,7 @@ import { PlansComponent } from './plans/plans.component';
 import { RenewComponent } from './renew/renew.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
     PlansComponent,
     RenewComponent,
     AdminDashboardComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
