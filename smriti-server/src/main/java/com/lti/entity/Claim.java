@@ -29,7 +29,7 @@ public class Claim {
 	private LocalDate date;
 
 	@Column(name = "status")
-	private String status;
+	private String status;//approved or pending, not approved 
 
 	@Column(name = "amount")
 	private double amount;
@@ -39,8 +39,8 @@ public class Claim {
 
 	@Column(name = "contact_no")
 	private long contactNo;
-
-	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "customer_id")
 	private Customer customer;
 	

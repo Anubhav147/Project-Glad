@@ -3,6 +3,7 @@ package com.lti.controller;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -115,6 +116,11 @@ public class PasswordController {
 		} catch (UserServiceException e) {
 			StatusDto status = new StatusDto();
 			status.setMessage(e.getMessage());
+			status.setStatus(StatusDto.StatusType.FAILURE);
+			return status;
+		} catch(EmptyResultDataAccessException e) {
+			StatusDto status = new StatusDto();
+			status.setMessage("User not found! ");
 			status.setStatus(StatusDto.StatusType.FAILURE);
 			return status;
 		}

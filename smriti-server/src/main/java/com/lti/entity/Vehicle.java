@@ -33,23 +33,23 @@ public class Vehicle {
 	@Column(name = "manufacturer")
 	private String manufacturer;
 	
-	@Column(name = "driving_license")
+	@Column(name = "driving_license", unique = true)
 	private String drivingLicense;
 	
 	@Column(name = "purchase_date")
 	private LocalDate purchaseDate;
 	
-	@Column(name = "registration_no")
+	@Column(name = "registration_no", unique = true)
 	private String registrationNo;
 	
-	@Column(name = "engine_no")
+	@Column(name = "engine_no",unique = true)
 	private String engineNo;
 	
-	@Column(name = "chassis_no")
+	@Column(name = "chassis_no", unique = true)
 	private String chassisNo;
 	
 	@Column(name = "engine_type")
-	private String engineType;
+	private String engineType;  //petrol/diesel
 	
 	@Column(name = "last_renew_date")
 	private LocalDate lastRenewDate;
