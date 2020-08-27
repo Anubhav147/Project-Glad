@@ -60,7 +60,6 @@ class ClaimInsuranceTestCases {
 		InsurancePlan ip = new InsurancePlan();
 		ip.setName("madhuban");
 		ip.setType("Motor Vehicle Plan");
-		ip.setDuration(12);
 		ip.setAmount(35000);
 		ip.setCommission(24000);
 		

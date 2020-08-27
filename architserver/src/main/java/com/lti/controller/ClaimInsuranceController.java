@@ -1,8 +1,11 @@
 package com.lti.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,7 +33,7 @@ public class ClaimInsuranceController {
 
 			Claim claim = new Claim();
 			claim.setDate(claimDto.getDate());
-			claim.setStatus(claimDto.getStatus());
+			claim.setStatus("PENDING");
 			claim.setAmount(claimDto.getAmount());
 			claim.setReason(claimDto.getReason());
 			claim.setContactNo(claimDto.getContactNo());
@@ -67,27 +70,6 @@ public class ClaimInsuranceController {
 			claim.setStatus(approveClaimDto.getStatus());
 
 			service.saveAndUpdateOfClaimInsuranceDetails(claim);
-
-			Status status = new Status();
-			status.setStatus(StatusType.SUCCESS);
-			status.setMessage("Claim status is updated Successfully.");
-			return status;
-
-		} catch (Exception e) {
-			Status status = new Status();
-			status.setMessage(e.getMessage());
-			status.setStatus(StatusType.FAILURE);
-
-			return status;
-		}
-	}
-	
-	@PostMapping(path = "/getAllClaims", consumes = "application/json", produces = "application/json")
-	public Status getClaims(@RequestBody GetAllClaims getAllClaims) {
-		try {
-
-			// Check if session id is of ADMIN role from User table -not added
-			// is role is not admin then throw InsuranceServiceException
 
 			Status status = new Status();
 			status.setStatus(StatusType.SUCCESS);
