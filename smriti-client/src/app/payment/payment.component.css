@@ -8,7 +8,7 @@ body{
 }
 .login-box{
     width: 400px;
-    height: 420px;
+    height: 500px;
     background: rgba(0, 0, 0, 0.8);
     color: #fff;
     top: 50%;
@@ -41,7 +41,7 @@ h1{
     width: 100%;
     margin-bottom: 20px;
 }
-.login-box input[type="email"], input[type="password"]
+.login-box input[type="email"], input[type="password"], input[type="text"],input[type="tel"]
 {
     border: none;
     border-bottom: 1px solid #fff;

@@ -27,7 +27,7 @@ insurance_plan: InsurancePlan = new InsurancePlan();
     })
     alert("Thank you ! Please proceed for payment");
     
-   this.router.navigate[('payment')];
+   this.router.navigate(['payment']);
   }
 
 

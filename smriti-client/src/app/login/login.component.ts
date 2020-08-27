@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
       else{
         //show error on login page fronted part
         this.router.navigate(['login']);
+        
       }
     })
   }

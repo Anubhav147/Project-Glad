@@ -18,7 +18,8 @@ paymentDto: PaymentDto = new PaymentDto;
     this.paymentService.payNow(this.paymentDto).subscribe(data => {
       alert(JSON.stringify(data));
       })
-      //alert("Thank you ! Your policy is renewed");
-      
+      alert("Click 'OK' to confirm payment");
+       
+      this.router.navigate(['congratulations']);
     }
   }

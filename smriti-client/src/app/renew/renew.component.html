@@ -9,27 +9,27 @@
         <h1>Renew Insurance</h1>
             <form (ngSubmit)="renewPlan()" >
             <p>Policy number</p>
-            <input type="text" name="pno" placeholder="" [(ngModel)]=policy.id required>
+            <input type="text" name="id" placeholder="" [(ngModel)]=policy.id required maxlength="10">
                 
             <p>Mobile number</p>
-            <input type="text" name="mobile" placeholder="" [(ngModel)]=customer.contact required>
+            <input type="text" name="contact" placeholder="" [(ngModel)]=customer.contact required>
 
             <p>Email</p>
             <input type="email" name="email" placeholder="" [(ngModel)]=customer.email required>
             
             <label for="plans">Plans:</label>
-            <select name="plans" id="plans" required>
+            <select name="plans" id="plans" [(ngModel)]=insurance_plan.insurance_type required>
                 <option selected value="">Select</option>
-                <option value="third_party" [(ngModel)]=insurance_plan.insurance_type>Third Party Liability</option>
-                <option value="comprehensive" [(ngModel)]=insurance_plan.insurance_type>Comprehensive</option>
+                <option value="third_party" >Third Party Liability</option>
+                <option value="comprehensive" >Comprehensive</option>
             </select>
 
             <label for="duration">Duration</label>
-            <select name="duration" id="duration" required>
+            <select name="duration" id="duration" [(ngModel)]=policy.duration required>
                 <option selected value="">Select</option>
-                <option value=1 [(ngModel)]=policy.duration>One Year</option>
-                <option value=2 [(ngModel)]=policy.duration>Two Year</option>
-                <option value=3 [(ngModel)]=policy.duration>Three Year</option>
+                <option value=1 >One Year</option>
+                <option value=2 >Two Year</option>
+                <option value=3 >Three Year</option>
             </select>
             <button type="submit">Renew</button>
              

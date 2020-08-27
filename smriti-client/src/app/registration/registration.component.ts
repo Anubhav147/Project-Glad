@@ -31,13 +31,14 @@ datadto: DataDto = new DataDto();
   }
 
   register(){
+    
    this.customerService.register(this.customer).subscribe(data =>{
       if (data.status == 'SUCCESS') {
         // Verify your email address and re-login
         // Show registration successfull
-
+        //alert(JSON.stringify(data));
         //this.router.navigate(['login']);
-        this.router.navigate(['home']);
+        this.router.navigate(['login']);
       }
       else{
         //error show and re register

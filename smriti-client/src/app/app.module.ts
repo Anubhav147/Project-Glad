@@ -21,6 +21,8 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 import { EntityComponent } from './entity/entity.component';
 import { PaymentComponent } from './payment/payment.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { CongratulationsComponent } from './congratulations/congratulations.component';
+import { ClaimStatusComponent } from './claim-status/claim-status.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +41,9 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
     UserDashboardComponent,
     EntityComponent,
     PaymentComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    CongratulationsComponent,
+    ClaimStatusComponent
   ],
   imports: [
     BrowserModule,
