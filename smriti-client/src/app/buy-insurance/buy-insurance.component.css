@@ -7,7 +7,7 @@ body{
     font-family: sans-serif;
 }
 .login-box{
-    width: 50vw;
+    width: 400px;
     height: 125vh;
     background: rgba(0, 0, 0, 0.8);
     color: #fff;

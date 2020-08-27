@@ -23,6 +23,10 @@ import { PaymentComponent } from './payment/payment.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { CongratulationsComponent } from './congratulations/congratulations.component';
 import { ClaimStatusComponent } from './claim-status/claim-status.component';
+import { ContactComponent } from './contact/contact.component';
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { OtpComponent } from './otp/otp.component';
+import { AboutComponent } from './about/about.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +47,11 @@ import { ClaimStatusComponent } from './claim-status/claim-status.component';
     PaymentComponent,
     AdminDashboardComponent,
     CongratulationsComponent,
-    ClaimStatusComponent
+    ClaimStatusComponent,
+    ContactComponent,
+    ForgetPasswordComponent,
+    OtpComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

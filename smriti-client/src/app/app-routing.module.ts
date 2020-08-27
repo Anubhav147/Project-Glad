@@ -14,7 +14,10 @@ import { PaymentComponent } from './payment/payment.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { CongratulationsComponent } from './congratulations/congratulations.component';
 import { ClaimStatusComponent } from './claim-status/claim-status.component';
-
+import { ContactComponent } from './contact/contact.component';
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { OtpComponent } from './otp/otp.component';
+import { AboutComponent } from './about/about.component';
 const routes: Routes = [
   {path: 'renew', component: RenewComponent},
   {path: 'plans', component: PlansComponent},
@@ -29,7 +32,11 @@ const routes: Routes = [
   { path: 'adminDashboard', component: AdminDashboardComponent },
   { path: 'payment', component: PaymentComponent },
   { path: 'congratulations', component: CongratulationsComponent },
-  { path: 'claimStatus', component: ClaimStatusComponent }
+  { path: 'claimStatus', component: ClaimStatusComponent },
+  { path: 'contact', component: ContactComponent},
+  { path: 'otp', component: OtpComponent },
+  { path: 'forgetPassword', component: ForgetPasswordComponent },
+  { path: 'about', component: AboutComponent }
   //{path: 'plan-select', component: PlanSelectComponent}
 ];
 

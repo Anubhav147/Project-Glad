@@ -7,8 +7,8 @@ body{
     font-family: sans-serif;
 }
 .login-box{
-    width: 400px;
-    height: 560px;
+    width: 360px;
+    height: 320px;
     background: rgba(0, 0, 0, 0.8);
     color: #fff;
     top: 50%;
@@ -37,15 +37,12 @@ h1{
     padding: 0;
     font-weight: bold;
 }
-.login-box input, button{
+.login-box input{
     width: 100%;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
-select, label{
-    width: 100%;
-    margin-bottom: 40px;
-}
-.login-box input[type="email"], input[type="text"],select, label
+.login-box input[type="text"], input[type="password"]
 {
     border: none;
     border-bottom: 1px solid #fff;
@@ -54,8 +51,9 @@ select, label{
     height: 40px;
     color: #fff;
     font-size: 16px;
+
 }
-.login-box button
+.login-box input[type="submit"]
 {
     border: none;
     outline: none;
@@ -65,7 +63,7 @@ select, label{
     font-size: 18px;
     border-radius: 20px;
 }
-.login-box button:hover
+.login-box input[type="submit"]:hover
 {
     cursor: pointer;
     background: #39dc79;
@@ -81,65 +79,3 @@ select, label{
 {
     color: #39dc79;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
