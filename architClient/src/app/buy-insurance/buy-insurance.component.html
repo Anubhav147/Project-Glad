@@ -16,11 +16,10 @@
                 <input type="text" id="eno" name="eno" placeholder="Engine number" [(ngModel)] = vehicle.engineNo>
                 <input type="text" id="cno" name="cno" placeholder="Chassis number" [(ngModel)] = vehicle.chassisNo>
                 <input type="text" id="etype" name="eType" placeholder="Engine Type"  [(ngModel)] = vehicle.engineType/>
-                <input type="Date" id="lastRenew" name="lastRenew" placeholder="Last Renew Date" [(ngModel)] = vehicle.lastRenewDate/><br/>
-                <input type="number" id="cId" name="cId" placeholder="Customer ID" [(ngModel)] = vehicle.customerId/><br/>
+                <input type="Date" id="lastRenew" name="lastRenew" placeholder="Last Renew Date" [(ngModel)] = vehicle.lastRenewDate/>
 
             <input type="submit" name="submit" value="Submit">
-            <input type="submit" name="submit" value="Homepage" [routerLink] = "'/app'">
+            <input type="submit" name="submit" value="Homepage" [routerLink] = "'/home'">
                
             </form>
         

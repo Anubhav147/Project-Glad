@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title> LTI Insurance </title>   
+</head>
+    <body>
+    <div class="login-box">
+    <img src="../assets/image/avatar.png" class="avatar">
+        <h1>Make Payment</h1>
+            <form (ngSubmit) = "pay()">
+                <input type="email" [(ngModel)]=paymentDto.email name="email" placeholder="Enter Email Id" required/>
+                <input type="text" name="amount" placeholder="Enter Amount" [(ngModel)] = paymentDto.amount/>
+                <input type="text" name="mode" placeholder="Enter Mode Of Payment" [(ngModel)] = paymentDto.modeOfPayment/>
+                <input type="text" name="acc" placeholder="Enter Account No" [(ngModel)] = paymentDto.accountNo/>
+                <input type="tel" name="cntct" placeholder="Enter Contact no." [(ngModel)] = paymentDto.contactNo/>
+                <input type="text" name="cvv" placeholder="Enter CVV" [(ngModel)] = paymentDto.cvv/>
+        
+            <input type="submit" name="submit" value="Submit">
+            </form>
+          <form>  <input type="submit" name="submit" value="Cancel" routerLink = "/home" routerLinkActive="active" /></form>
+        
+        </div>
+    
+    </body>
+</html>

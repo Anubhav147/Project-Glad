@@ -11,9 +11,6 @@
             <label for="claimDate">Claim Date:</label>
             <input type="Date" name="claimDate" placeholder="DD/MM/YYYY" [(ngModel)] = claim.date>
 
-            <!--<label for="claimStatus">Claim Status: </label>
-            <input type="text" name="status" placeholder="" [(ngModel)] = claim.status>-->
-
             <label for="amount">Claim Amount: </label>
             <input type="number" name="amount" placeholder="" [(ngModel)] = claim.amount>
         
@@ -36,7 +33,7 @@
 
             
         <input type="submit" value="Claim Insurance" />
-        <input type="submit" name="submit" value="Homepage" [routerLink] = "'/app'">
+        <input type="submit" name="submit" value="Homepage" [routerLink] = "'/home'">
                
         </form>
 

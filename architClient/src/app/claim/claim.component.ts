@@ -1,6 +1,8 @@
+import { ClaimInsuranceService } from './claim-insurance.service';
+
 import { ApproveClaim } from './../Entity/ApproveClaim';
 import { Claim } from './../Entity/Claim';
-import { ClaimInsuranceService } from './../claim-insurance.service';
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -16,15 +18,25 @@ export class ClaimComponent implements OnInit {
   constructor(private service: ClaimInsuranceService) { }
 
   claimInsurance(){
-    this.service.claimInsurance(this.claim).subscribe(data =>{
+    this.service.claimInsurance(this.claimCustomerId(this.claim)).subscribe(data =>{
       alert(JSON.stringify(data));
     })
   }
 
   updateStatus(){
-    this.service.updateStatus(this.approveClaim).subscribe(data =>{
+    this.service.updateStatus(this.approveClaimCustomerId(this.approveClaim)).subscribe(data =>{
       alert(JSON.stringify(data));
     })
+  }
+
+  claimCustomerId(claim){
+    claim.customerId = sessionStorage.getItem('id');
+    return claim;
+  }
+
+  approveClaimCustomerId(approveClaim){
+    approveClaim.customerId = sessionStorage.getItem('id');
+    return approveClaim;
   }
 
   ngOnInit(): void {
