@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { Policy } from './policy';
 import { Customer } from './customer';
 import { RenewService } from './renew.service';
@@ -27,7 +27,7 @@ insurance_plan: InsurancePlan = new InsurancePlan();
     })
     alert("Thank you ! Please proceed for payment");
     
-    //this.router.navigate(['payment']);
+   this.router.navigate[('payment')];
   }
 
 
