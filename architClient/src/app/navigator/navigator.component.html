@@ -7,12 +7,13 @@
     
       <div class="spacer"></div>
       <ul class="navL">
-        <li><a style="color:white" routerLink="/home" routerLinkActive="active">Home</a></li>
-        <li><a style="color:white" routerLink="/login" routerLinkActive="active">Login</a></li>
-        <li><a style="color:white" routerLink="" routerLinkActive="active"></a>Contact Us</li>
-        <li><a style="color:white" routerLink="" routerLinkActive="active"></a>About</li>
-        <li><a style="color:white" routerLink="" routerLinkActive="active"></a>Help</li>
-        <li><a style="color:white" routerLink="" routerLinkActive="active"></a>FAQ</li>
+        <li><a [routerLink]="'/home'" active>Home</a></li>
+        <li><a [routerLink]="'/register'">Register</a></li>
+        <li><a [routerLink]="'/login'">Login</a></li>
+        <li>About</li>
+        <li>Contact Us</li>
+        <li>Help</li>
+        <li>FAQ</li>
       </ul>
       
   </div>

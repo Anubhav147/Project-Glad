@@ -31,8 +31,10 @@ datadto: DataDto = new DataDto();
   }
 
   register(){
-   this.customerService.register(this.customer).subscribe(data =>{
-      if (data.status == 'SUCCESS') {
+   this.customerService.register(this.customer).subscribe(dataGot =>{
+      let data:any
+      data = dataGot
+      if (data.status == 'SUCCESS') { 
         // Verify your email address and re-login
         // Show registration successfull
 

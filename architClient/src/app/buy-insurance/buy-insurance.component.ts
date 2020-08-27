@@ -23,6 +23,7 @@ export class BuyInsuranceComponent implements OnInit {
     this.service.buyInsurance(this.setVehicleDto(this.vehicle)).subscribe(data =>{
       alert(JSON.stringify(data));
     })
+    this.router.navigate(['payment']);
 }
 
   setVehicleDto(vehicle){

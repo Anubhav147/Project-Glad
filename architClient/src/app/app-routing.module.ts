@@ -12,6 +12,8 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 //import { PlanSelectComponent } from './plan-select/plan-select.component';
 import { PaymentComponent } from './payment/payment.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { CongratulationsComponent } from './congratulations/congratulations.component';
+import { ClaimStatusComponent } from './claim-status/claim-status.component';
 
 const routes: Routes = [
   {path: 'renew', component: RenewComponent},
@@ -25,7 +27,9 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'userDashboard', component: UserDashboardComponent },
   { path: 'adminDashboard', component: AdminDashboardComponent },
-  { path: 'payment', component: PaymentComponent }
+  { path: 'payment', component: PaymentComponent },
+  { path: 'congratulations', component: CongratulationsComponent },
+  { path: 'claimStatus', component: ClaimStatusComponent }
   //{path: 'plan-select', component: PlanSelectComponent}
 ];
 

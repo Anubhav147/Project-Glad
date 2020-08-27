@@ -18,8 +18,9 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   login(){
-    this.loginService.login(this.loginDto).subscribe(data =>{
-      alert(JSON.stringify(data));
+    this.loginService.login(this.loginDto).subscribe(dataGot =>{
+      let data:any
+      data = dataGot
 
       if(data.status == 'SUCCESS'){
         let id = data.id;

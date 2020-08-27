@@ -10,9 +10,12 @@
                 <input type="email" [(ngModel)]=paymentDto.email name="email" placeholder="Enter Email Id" required/>
                 <input type="text" name="amount" placeholder="Enter Amount" [(ngModel)] = paymentDto.amount/>
                 <input type="text" name="mode" placeholder="Enter Mode Of Payment" [(ngModel)] = paymentDto.modeOfPayment/>
-                <input type="text" name="acc" placeholder="Enter Account No" [(ngModel)] = paymentDto.accountNo/>
-                <input type="tel" name="cntct" placeholder="Enter Contact no." [(ngModel)] = paymentDto.contactNo/>
-                <input type="text" name="cvv" placeholder="Enter CVV" [(ngModel)] = paymentDto.cvv/>
+                <input type="text" name="acc" placeholder="Enter Account No" [(ngModel)] = paymentDto.accountNo required minlength="12"/>
+                <!--<div *ngIf="password.errors.required" class="alert alert-danger"> Invalid Account Number. </div>-->
+                <input type="tel" name="cntct" placeholder="Enter Contact no." [(ngModel)] = paymentDto.contactNo required minlength="10" maxlength="10"/>
+                <!--<div *ngIf="password.errors.required" class="alert alert-danger"> Invalid Contact number. </div>-->
+                <input type="text" name="cvv" placeholder="Enter CVV" [(ngModel)] = paymentDto.cvv required minlength="3" maxlength="3"/>
+                <!--<div *ngIf="password.errors.required" class="alert alert-danger"> Invalid CVV. </div>-->
         
             <input type="submit" name="submit" value="Submit">
             </form>

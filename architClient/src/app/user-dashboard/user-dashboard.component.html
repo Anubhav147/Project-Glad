@@ -36,7 +36,7 @@
 <div class="info">
     <img class="profilepic" src="imges/pic.jpg" alt="">
     <p>Welcome! <br>
-        <span class="fw">User</span> <br>     
+        <span class="fw">{{name}}</span> <br>     
        <button>Generate pdf</button>
     </p>
      
@@ -57,7 +57,7 @@
    </div>
    
     <div class="score grey">
-        <p><button><a routerLink="/claimInsurance" routerLinkActive="active">Claim</a></button>  <span ><button><a routerLink="/renew" routerLinkActive="active">Renew</a></button></span>
+        <p><button><a [routerLink]="'/claimInsurance'" routerLinkActive="active">Claim</a></button>  <span ><button><a [routerLink]="'/renew'" routerLinkActive="active">Renew</a></button></span>
     </p>
 </div>
 </div>

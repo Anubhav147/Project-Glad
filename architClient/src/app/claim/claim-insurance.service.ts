@@ -14,8 +14,4 @@ export class ClaimInsuranceService {
   claimInsurance(claim: Claim){
     return this.http.post('http://localhost:8080/addClaimInsurance', claim);
   }
-
-  updateStatus(approveClaim: ApproveClaim){
-    return this.http.post('http://localhost:8080/updateClaimStatus', approveClaim);
-  }
 }
