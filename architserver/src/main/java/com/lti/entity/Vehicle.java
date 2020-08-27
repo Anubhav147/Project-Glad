@@ -30,32 +30,31 @@ public class Vehicle {
 	@Column(name = "model")
 	private String model;
 	
-	@Column(name = "manufacture")
-	private String manufacture;
+	@Column(name = "manufacturer")
+	private String manufacturer;
 	
-	@Column(name = "driving_license")
+	@Column(name = "driving_license", unique = true)
 	private String drivingLicense;
 	
 	@Column(name = "purchase_date")
 	private LocalDate purchaseDate;
 	
-	@Column(name = "registration_no")
+	@Column(name = "registration_no", unique = true)
 	private String registrationNo;
 	
-	@Column(name = "engine_no")
+	@Column(name = "engine_no",unique = true)
 	private String engineNo;
 	
-	@Column(name = "chassis_number")
+	@Column(name = "chassis_no", unique = true)
 	private String chassisNo;
+	
+	@Column(name = "engine_type")
+	private String engineType;  //petrol/diesel
 	
 	@Column(name = "last_renew_date")
 	private LocalDate lastRenewDate;
 	
-	@Column(name = "engine_type")
-	private String engineType;
-	//private int customerNo;  --fk
-	
-	@ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "customer_id")
 	private Customer customer;
 	
@@ -66,6 +65,15 @@ public class Vehicle {
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
+	
+	public LocalDate getLastRenewDate() {
+		return lastRenewDate;
+	}
+
+	public void setLastRenewDate(LocalDate lastRenewDate) {
+		this.lastRenewDate = lastRenewDate;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -84,11 +92,11 @@ public class Vehicle {
 	public void setModel(String model) {
 		this.model = model;
 	}
-	public String getManufacture() {
-		return manufacture;
+	public String getManufacturer() {
+		return manufacturer;
 	}
-	public void setManufacture(String manufacture) {
-		this.manufacture = manufacture;
+	public void setManufacturer(String manufacturer) {
+		this.manufacturer = manufacturer;
 	}
 	public String getDrivingLicense() {
 		return drivingLicense;
@@ -120,15 +128,6 @@ public class Vehicle {
 	public void setChassisNo(String chassisNo) {
 		this.chassisNo = chassisNo;
 	}
-	
-	public LocalDate getLastRenewDate() {
-		return lastRenewDate;
-	}
-
-	public void setLastRenewDate(LocalDate lastRenewDate) {
-		this.lastRenewDate = lastRenewDate;
-	}
-
 	public String getEngineType() {
 		return engineType;
 	}

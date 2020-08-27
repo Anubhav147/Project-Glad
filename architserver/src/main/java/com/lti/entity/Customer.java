@@ -1,14 +1,17 @@
 package com.lti.entity;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -18,28 +21,32 @@ import javax.persistence.Table;
 @NamedQuery(name = "fetch-all", query = "select c from Customer c")
 @NamedQuery(name = "is-customer-present", query = "select count(c.emailId) from Customer c where c.emailId = :em")
 public class Customer {
-	
+
 	@Id
-	@SequenceGenerator(name = "id", initialValue = 1, allocationSize=1)
+	@SequenceGenerator(name = "id", initialValue = 1, allocationSize = 1)
 	@GeneratedValue
 	private int id;
-	
+
 	@Column(name = "name")
 	private String name;
-	
+
 	@Column(name = "email")
 	private String emailId;
-	
+
 	@Column(name = "dateOfBirth")
 	private LocalDate dateOfBirth;
-	
+
 	@Column(name = "contact_no")
 	private long contactNo;
-	
+
 	@OneToOne(cascade = CascadeType.PERSIST)
-	@JoinColumn(name="address_id")
+	@JoinColumn(name = "address_id")
 	private Address address;
-	
+
+	// @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, fetch =
+	// FetchType.EAGER)
+	// private List<Claim> claims;
+
 	public int getId() {
 		return id;
 	}

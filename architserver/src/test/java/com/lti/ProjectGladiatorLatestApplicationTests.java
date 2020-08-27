@@ -33,7 +33,7 @@ class BuyInsuranceTestCases {
 		Vehicle v = new Vehicle();
 		v.setType("Four Wheeler");
 		v.setModel("S-Cross");
-		v.setManufacture("Maruti");
+		v.setManufacturer("Maruti");
 		v.setDrivingLicense("QWERTY12");
 		v.setPurchaseDate(LocalDate.of(2019, 11, 19));
 		v.setRegistrationNo("ASDFG123");

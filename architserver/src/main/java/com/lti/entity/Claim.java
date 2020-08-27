@@ -29,7 +29,7 @@ public class Claim {
 	private LocalDate date;
 
 	@Column(name = "status")
-	private String status;
+	private String status;//approved or pending, not approved 
 
 	@Column(name = "amount")
 	private double amount;
@@ -39,8 +39,8 @@ public class Claim {
 
 	@Column(name = "contact_no")
 	private long contactNo;
-
-	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "customer_id")
 	private Customer customer;
 	
@@ -100,8 +100,8 @@ public class Claim {
 		return contactNo;
 	}
 
-	public void setContactNo(long contactNo) {
-		this.contactNo = contactNo;
+	public void setContactNo(long l) {
+		this.contactNo = l;
 	}
 
 	public Customer getCustomer() {
@@ -110,12 +110,6 @@ public class Claim {
 
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
-	}
-
-	@Override
-	public String toString() {
-		return "Claim [id=" + id + ", date=" + date + ", status=" + status + ", amount=" + amount + ", reason=" + reason
-				+ ", contactNo=" + contactNo + ", customer=" + customer + ", policy=" + policy + "]";
 	}
 
 	

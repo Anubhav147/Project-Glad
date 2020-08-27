@@ -42,7 +42,7 @@ public class DashboardRepositoryImpl implements DashboardRepository {
 	
 	@Override
 	public long getCountClaim() {
-		Query q = entityManager.createQuery("select count(claim.id) from Claim as claim");
+		Query q = entityManager.createQuery("select count(claim.id) from Claim as claim where claim.status = 'PENDING'");
 		long count = (Long) q.getSingleResult();
 		return count;
 	}
@@ -68,4 +68,33 @@ public class DashboardRepositoryImpl implements DashboardRepository {
 		double amount = (double) query.getSingleResult();
 		return amount;
 	}
+	
+	@Override
+	public long getUserInsuranceCount(int id) {
+		Query q = entityManager.createQuery("select count(p.id) from Policy p where p.customer.id=:id").setParameter("id", id);
+		long count = (Long) q.getSingleResult();
+		return count;
+	}
+	
+	@Override
+	public long getUserClaimCount(int id) {
+		Query q = entityManager.createQuery("select count(c.id) from Claim c where c.customer.id=:id").setParameter("id", id);
+		long count = (Long) q.getSingleResult();
+		return count;
+	}
+	
+	@Override
+	public long getUserRenewCount(int id) {
+		Query q = entityManager.createQuery("select count(c.id) from Claim c where c.customer.id=:id and c.status='Renewed'").setParameter("id", id);
+		long count = (Long) q.getSingleResult();
+		return count;
+	}
+	
+	@Override
+	public long getUserDashboardData(int id) {
+		Query q = entityManager.createQuery("select count(c.id) from Claim c where c.customer.id=:id and c.status='Renewed'").setParameter("id", id);
+		long count = (Long) q.getSingleResult();
+		return count;
+	}
+	
 }

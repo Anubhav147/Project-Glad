@@ -54,7 +54,7 @@ class ClaimInsuranceTestCases {
 		policy.setExpiryDate(LocalDate.of(2019, 12, 25));
 		policy.setDuration(12);
 		policy.setPolicyAmount(40000);
-		policy.setPlan_amount(31000);
+		policy.setPlanAmount(31000);
 		policy.setCustomer(cust);
 		
 		InsurancePlan ip = new InsurancePlan();

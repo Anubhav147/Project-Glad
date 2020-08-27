@@ -20,26 +20,16 @@ public class InsurancePlan {
 	private String name;
 	
 	@Column(name = "insurance_type")
-	private String type;//third party or Comprehensive
+	private String type;//third party or comprehensive
 	
 	@Column(name = "amount")
-	private double amount;
+	private double amount;//2000
 	
 	@Column(name = "commission")
-	private int commission;
+	private int commission;//500
 	
 	@Column(name = "company_name")
 	private String companyName;
-
-	
-
-	public String getCompanyName() {
-		return companyName;
-	}
-
-	public void setCompanyName(String companyName) {
-		this.companyName = companyName;
-	}
 
 	public int getId() {
 		return id;

@@ -18,17 +18,8 @@ import com.lti.service.DashboardService;
 public class AdminDashboradController {
 	
 	@Autowired
-	private ClaimInsuranceService service;
-	
-	@Autowired
 	private DashboardService dashboardService;
 	
-	@GetMapping(path = "/getAllClaimData", produces = "application/json")
-	public List<Claim> getAllClaimData() throws InsuranceServiceException {
-		return service.getClaimInsuranceData();
-	}
-	
-	//to approve or not approved part or set amount of claim is implement in claim-insurance controller
 	
 	@GetMapping(path = "/getByClaimStatus/{processingStatus}", produces = "application/json")
 	public List<Claim> fetchClaimByStatus(@PathVariable(value = "processingStatus") String processingStatus){

@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "PREMIUM_ESTIMATE_MOTOR")
 public class Premium {
@@ -29,7 +31,7 @@ public class Premium {
 	@Column(name = "amount")
 	private double amount;
 
-	@Column(name = "depreciationRate")
+	@Column(name = "depreciation_rate")
 	private int depreciationRate;
 	
 	@Column(name = "duration")
@@ -57,6 +59,7 @@ public class Premium {
 		this.duration = duration;
 	}
 
+	@JsonIgnore
 	public double getLossSuffered() {
 		return lossSuffered;
 	}
@@ -72,7 +75,8 @@ public class Premium {
 	public void setId(int id) {
 		this.id = id;
 	}
-
+	
+	@JsonIgnore
 	public String getType() {
 		return type;
 	}
@@ -104,7 +108,8 @@ public class Premium {
 	public void setAmount(double amount) {
 		this.amount = amount;
 	}
-
+	
+	@JsonIgnore
 	public int getDepreciationRate() {
 		return depreciationRate;
 	}
@@ -112,5 +117,14 @@ public class Premium {
 	public void setDepreciationRate(int depreciationRate) {
 		this.depreciationRate = depreciationRate;
 	}
+
+	@Override
+	public String toString() {
+		return "Premium [id=" + id + ", type=" + type + ", age=" + age + ", model=" + model + ", amount=" + amount
+				+ ", depreciationRate=" + depreciationRate + ", duration=" + duration + ", lossSuffered=" + lossSuffered
+				+ ", totalCostOfVehicle=" + totalCostOfVehicle + "]";
+	}
+	
+	
 
 }

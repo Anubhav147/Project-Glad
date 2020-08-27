@@ -33,7 +33,7 @@ public class BuyInsuranceController {
 			vehicle.setDrivingLicense(vehicleDto.getDrivingLicense());
 			vehicle.setEngineType(vehicleDto.getEngineType());
 			vehicle.setEngineNo(vehicleDto.getEngineNo());
-			vehicle.setManufacture(vehicleDto.getManufacture());
+			vehicle.setManufacturer(vehicleDto.getManufacture());
 			vehicle.setModel(vehicleDto.getModel());
 			vehicle.setType(vehicleDto.getType());
 			vehicle.setPurchaseDate(vehicleDto.getPurchaseDate());
