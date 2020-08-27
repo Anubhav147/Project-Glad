@@ -13,6 +13,9 @@ import { RenewComponent } from './renew/renew.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { ContactComponent } from './contact/contact.component';
+import { AboutComponent } from './about/about.component';
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { OtpComponent } from './otp/otp.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { ContactComponent } from './contact/contact.component';
     RenewComponent,
     AdminDashboardComponent,
     UserDashboardComponent,
-    ContactComponent
+    ContactComponent,
+    AboutComponent,
+    ForgetPasswordComponent,
+    OtpComponent
   ],
   imports: [
     BrowserModule,
