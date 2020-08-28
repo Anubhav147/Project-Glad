@@ -9,7 +9,7 @@
         <form name="form" (ngSubmit) = "f.form.valid && claimInsurance()" #f="ngForm" novalidate>
                 
             <label for="claimDate">Claim Date:</label>
-            <input class="form-control" #claimDate="ngModel" type="Date" id="claimDate" [(ngModel)]=claim.date name="claimDate" placeholder="" required>
+            <input class="form-control" #claimDate="ngModel" type="text" id="claimDate" [(ngModel)]=claim.date name="claimDate" placeholder="" onfocus="(this.type='date')">
                 <div *ngIf="(f.submitted && claimDate.invalid) || claimDate.touched">
                 <div *ngIf="claimDate.errors.required"> This Field is required. </div></div>
 

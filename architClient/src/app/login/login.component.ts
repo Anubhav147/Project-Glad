@@ -31,7 +31,11 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem('name', name);
         sessionStorage.setItem('role', role);
 
+        if(role == 'ADMIN'){
+          this.router.navigate(['adminDashboard']);
+        }else{
         this.router.navigate(['userDashboard']);
+        }
       }
       else{
         //show error on login page fronted part

@@ -1,3 +1,5 @@
+import { ContactComponent } from './contact/contact.component';
+import { AboutComponent } from './about/about.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { RenewComponent } from './renew/renew.component';
@@ -22,14 +24,17 @@ const routes: Routes = [
   {path: 'claimInsurance', component: ClaimComponent},
   {path: 'estimate', component: EstimateComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'registration', component: RegistrationComponent},
+  {path: 'logout', component: HomeComponent},
+  {path: 'register', component: RegistrationComponent},
   {path: 'home', component: HomeComponent},
   { path: '', component: HomeComponent },
   { path: 'userDashboard', component: UserDashboardComponent },
   { path: 'adminDashboard', component: AdminDashboardComponent },
   { path: 'payment', component: PaymentComponent },
   { path: 'congratulations', component: CongratulationsComponent },
-  { path: 'claimStatus', component: ClaimStatusComponent }
+  { path: 'claimStatus', component: ClaimStatusComponent },
+  { path: 'about', component: AboutComponent},
+  { path: 'contactUs', component: ContactComponent}
   //{path: 'plan-select', component: PlanSelectComponent}
 ];
 

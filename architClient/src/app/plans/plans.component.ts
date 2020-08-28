@@ -1,3 +1,5 @@
+import { PlansService } from './plans.service';
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlansComponent implements OnInit {
 
-  constructor() { }
+
+  plan: any;
+
+  constructor(private service: PlansService) { }
 
   ngOnInit(): void {
+    this.service.getAllInsuranceData().subscribe(data=>{
+      this.plan = data;
+    })
   }
 
 }

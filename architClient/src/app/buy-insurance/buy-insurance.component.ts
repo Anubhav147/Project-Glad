@@ -24,7 +24,7 @@ export class BuyInsuranceComponent implements OnInit {
       alert(JSON.stringify(data));
     })
     this.router.navigate(['payment']);
-}
+  }
 
   setVehicleDto(vehicle){
     vehicle.customerId = sessionStorage.getItem('id')

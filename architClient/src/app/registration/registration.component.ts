@@ -38,8 +38,8 @@ datadto: DataDto = new DataDto();
         // Verify your email address and re-login
         // Show registration successfull
 
-        //this.router.navigate(['login']);
-        this.router.navigate(['home']);
+        this.router.navigate(['login']);
+        //this.router.navigate(['home']);
       }
       else{
         //error show and re register

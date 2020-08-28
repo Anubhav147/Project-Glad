@@ -1,30 +1,32 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <title> LTI Insurance </title>   
-</head>
-    <body>
-    <div class="login-box">
-    <img src="../assets/image/avatar.png" class="avatar">
-        <h1>Insurance Plans </h1>
-            <form>
-            <label for="plans">Plans:</label>
-            <select name="plans" id="plans">
-                <option value="third_party">Third Party Liability</option>
-                <option value="comprehensive">Comprehensive</option>
-            </select>
+    <title>LTI Insurance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-            <label for="duration">Duration</label>
-            <select name="duration" id="duration">
-                <option value="one_year">One Year</option>
-                <option value="two_year">Two Year</option>
-                <option value="three_year">Three Year</option>
-            </select>
-            <input type="submit" name="submit" value="Claim">
-               
-            </form>
-        
-        
+</head>
+<body>
+
+  <section class="team">
+     <div class="container">
+          <form>
+        <div class="card" *ngFor = "let p of plan">
+            <div class="box" *ngIf = "p">
+                <img src="../../assets/image/img6.jpg" alt="team img" />
+                <h4>Name: {{p.name}}</h4>
+                <h5>Type: {{p.type}}</h5>
+                <h5>Company: {{p.companyName}}</h5>
+                <h5>Amount: {{p.amount}}</h5>
+                <input type="radio" name="">
+            </div>
+
         </div>
-    
-    </body>
+        <input type="submit" name="submit" class="btn">
+        </form>
+          
+         
+     </div>
+  </section>
+
+</body>
 </html>
