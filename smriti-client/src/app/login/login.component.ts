@@ -18,8 +18,9 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   login(){
-    this.loginService.login(this.loginDto).subscribe(data =>{
-      alert(JSON.stringify(data));
+    this.loginService.login(this.loginDto).subscribe(dataGot =>{
+      let data:any
+      data = dataGot
 
       if(data.status == 'SUCCESS'){
         let id = data.id;
@@ -30,12 +31,16 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem('name', name);
         sessionStorage.setItem('role', role);
 
+        if(role == 'ADMIN'){
+          this.router.navigate(['adminDashboard']);
+        }
+        else{
         this.router.navigate(['userDashboard']);
+        }
       }
       else{
         //show error on login page fronted part
         this.router.navigate(['login']);
-        
       }
     })
   }

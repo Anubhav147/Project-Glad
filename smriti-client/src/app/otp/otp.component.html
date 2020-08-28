@@ -6,12 +6,9 @@
     <div class="login-box">
     <img src="../assets/image/avatar.png" class="avatar">
         <h1>Forget Password </h1>
-        <form name="form" (ngSubmit) = "f.form.valid && abc()" #f="ngForm" novalidate >
+        <form (ngSubmit) = "verifyOtp()">
             <p>OTP</p>
-            <input class="form-control" #otp="ngModel" type="text" [(ngModel)]=loginDto.email name="otp" placeholder="" required minlength="6" maxlength="6">
-                <div *ngIf="(f.submitted && otp.invalid) || (otp.dirty || otp.touched)" class="alert alert-danger">
-                <div *ngIf="otp.errors.required"> OTP is required. </div>
-                <div *ngIf="otp.errors.length"> OTP is invalid. </div></div>
+            <input type="text" name="otp" [(ngModel)]=otp placeholder="">
             
             <input type="submit" name="submit" value="Submit">
                

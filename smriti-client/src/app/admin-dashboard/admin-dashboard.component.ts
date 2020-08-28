@@ -14,32 +14,9 @@ export class AdminDashboardComponent implements OnInit {
   customerCount: any;
   renewCount: any;
   claimCount: any;
+  name = sessionStorage.getItem('name');
 
   constructor(private service: AdminDashboardService, private router: Router) { }
-
-  fetchCustomerCount(){
-    this.service.fetchCustomerCount().subscribe(data=>{
-      alert(JSON.stringify(data));
-    })
-  }
-
-  fetchClaimCount(){
-    this.service.fetchClaimCount().subscribe(data=>{
-      alert(JSON.stringify(data));
-    })
-  }
-
-  fetchPolicyCount(){
-    this.service.fetchPolicyCount().subscribe(data=>{
-      alert(JSON.stringify(data));
-    })
-  }
-
-  fetchRenewCount(){
-    this.service.fetchRenewCount().subscribe(data=>{
-      alert(JSON.stringify(data));
-    })
-  }
 
   statusUpdate(id, status){
     let data = new ApproveClaim()

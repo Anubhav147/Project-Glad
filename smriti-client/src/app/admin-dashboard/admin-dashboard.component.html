@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,15 +19,15 @@
     <div>
 
     <div class="marks">
-        <h1 class="orange">276</h1>
+        <h1 class="orange">{{customerCount}}</h1>
         <p>Customers </p>
     </div>
     <div class="marks">
-        <h1 class="blue">150</h1>
+        <h1 class="blue">{{renewCount}}</h1>
         <p>Renewed</p>
     </div>
     <div class="marks">
-        <h1 class="orange">10</h1>
+        <h1 class="orange">{{claimCount}}</h1>
         <p>Claim<br/>tickets</p>
     </div>
 </div>
@@ -36,7 +35,7 @@
 <div class="info">
     <img class="profilepic" src="imges/pic.jpg" alt="">
     <p>Welcome! <br>
-        <span class="fw">Admin</span> <br>     
+        <span class="fw">{{name}}</span> <br>
        
     </p>
      
@@ -47,71 +46,20 @@
    
     <div class="history">
   <h3 class="grey fw"> Claim Tickets: </h3>
-        <div class="list b-bottom">
-    <div class="list-detail">
-       <p>Samantha Rose </p>
-      <p>Reason:  <span class="orange">Manmade disaster</span></p>
+        <div class="list b-bottom" *ngFor = "let d of data">
+    <div *ngIf="d" class="list-detail">
+       <p>{{ d.customer.name }}</p>
+      <p>Reason:  <span class="orange">{{d.reason}}</span></p>
     
    </div>
    
     <div class="score grey">
-        <p><button class="btn-green">Approve</button>  <span ><button class="btn-red">Deny</button></span>
-    </p>
-</div>
-</div>
-  <div class="list b-bottom">
-    <div class="list-detail">
-       <p>Samantha Rose </p>
-      <p>Reason:  <span class="orange">Manmade disaster</span></p>
-    
-   </div>
-   
-    <div class="score grey">
-        <p><button class="btn-green">Approve</button>  <span ><button class="btn-red">Deny</button></span>
-    </p>
-</div>
-</div>
-  <div class="list b-bottom">
-    <div class="list-detail">
-       <p>Samantha Rose </p>
-      <p>Reason:  <span class="orange">Manmade disaster</span></p>
-    
-   </div>
-   
-    <div class="score grey">
-        <p><button class="btn-green">Approve</button>  <span ><button class="btn-red">Deny</button></span>
-    </p>
-</div>
-</div>
-  <div class="list b-bottom">
-    <div class="list-detail">
-       <p>Samantha Rose </p>
-      <p>Reason:  <span class="orange">Manmade disaster</span></p>
-    
-   </div>
-   
-    <div class="score grey">
-        <p><button class="btn-green">Approve</button>  <span ><button class="btn-red">Deny</button></span>
-    </p>
-</div>
-</div>
-  <div class="list b-bottom">
-    <div class="list-detail">
-       <p>Samantha Rose </p>
-      <p>Reason:  <span class="orange">Manmade disaster</span></p>
-    
-   </div>
-   
-    <div class="score grey">
-        <p><button class="btn-green">Approve</button>  <span ><button class="btn-red">Deny</button></span>
+        <p><button class="btn-green" (click)="statusUpdate(d.id, 'Approved')">Approve</button>  <span ><button class="btn-red" (click)="statusUpdate(d.id, 'Not Approved')">Deny</button></span>
     </p>
 </div>
 </div>
 
-
 </div>
-
-
 
 </section>
 

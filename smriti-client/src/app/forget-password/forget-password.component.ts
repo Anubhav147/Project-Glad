@@ -19,6 +19,7 @@ export class ForgetPasswordComponent implements OnInit {
     this.service.sendOtp(this.email).subscribe(dataDto =>{
       let data:any;
       data = dataDto
+      sessionStorage.setItem('email', data.email)
       if(data.status == 'SUCCESS'){ 
         sessionStorage.setItem('forgotEmail', data.emailId)
         this.router.navigate(['otp']);

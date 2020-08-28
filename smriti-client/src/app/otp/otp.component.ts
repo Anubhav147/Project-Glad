@@ -15,17 +15,17 @@ export class OtpComponent implements OnInit {
   }
 
     verifyOtp(){
-      this.service.verifyOtp(this.otp).subscribe(dataDto =>{
+      //this.service.verifyOtp(this.otp).subscribe(dataDto =>{
       let data:any;
-      data = dataDto
-      if(data.status == 'SUCCESS'){ 
-        sessionStorage.setItem('forgotEmail', data.emailId)
-        this.router.navigate(['otp']);
-    }
-    else{
-      this.router.navigate(['forgetPassword'])
-    }
-  })
+      //data = dataDto
+      //if(data.status == 'SUCCESS'){ 
+        //sessionStorage.setItem('forgotEmail', data.emailId)
+        this.router.navigate(['resetPassword']);
+    //}
+    //else{
+      //this.router.navigate(['forgetPassword'])
+    //}
+  //})
 }
 
 }
