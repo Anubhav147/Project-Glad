@@ -1,16 +1,18 @@
 package com.lti.repository;
 
-import org.springframework.transaction.annotation.Transactional;
+import java.util.List;
 
 import com.lti.entity.Customer;
+import com.lti.entity.InsurancePlan;
 import com.lti.entity.Vehicle;
 
 public interface BuyInsuranceRepository {
-
-	void submissionOfBuyInsuranceData(Vehicle vehicle);
-
+	
 	boolean isSameVehicleIsInsuredAlready(String registrationNo);
-
+	
+	void submissionOfBuyInsuranceData(Vehicle vehicle);
+	
 	Customer findById(int id);
 
+	List<InsurancePlan> getAllInsuranceData();
 }

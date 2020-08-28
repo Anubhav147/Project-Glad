@@ -1,14 +1,18 @@
 package com.lti.controller;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lti.dto.VehicleDto;
 import com.lti.entity.Customer;
+import com.lti.entity.InsurancePlan;
 import com.lti.entity.Vehicle;
 import com.lti.exception.InsuranceServiceException;
 import com.lti.service.BuyInsuranceService;
@@ -21,6 +25,11 @@ public class BuyInsuranceController {
 
 	@Autowired
 	private BuyInsuranceService service;
+	
+	@GetMapping(path="/getAllInsurance", produces="application/json")
+	public List<InsurancePlan> getAllInsurancePlans(){
+		return service.getAllInsurancePlan();
+	}
 	
 	@PostMapping(path="/buyInsurance", consumes = "application/json", produces = "application/json")
 	public Status submissionDetail(@RequestBody VehicleDto vehicleDto) {

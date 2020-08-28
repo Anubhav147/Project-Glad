@@ -15,5 +15,13 @@ public interface DashboardRepository {
 	long getCountPolicy();
 	
 	long getCountRenew();
+	
+	long getUserInsuranceCount(int id);
+	
+	long getUserClaimCount(int id);
+	
+	long getUserRenewCount(int id);
+	
+	long getUserDashboardData(int id);
 
 }
