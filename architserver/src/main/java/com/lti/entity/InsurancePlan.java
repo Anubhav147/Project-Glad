@@ -30,6 +30,16 @@ public class InsurancePlan {
 	
 	@Column(name = "company_name")
 	private String companyName;
+	
+	
+
+	public String getCompanyName() {
+		return companyName;
+	}
+
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
 
 	public int getId() {
 		return id;

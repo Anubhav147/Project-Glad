@@ -1,10 +1,13 @@
 package com.lti.service;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.lti.entity.Customer;
+import com.lti.entity.InsurancePlan;
 import com.lti.entity.Vehicle;
 import com.lti.exception.InsuranceServiceException;
 import com.lti.repository.BuyInsuranceRepository;
@@ -27,5 +30,12 @@ public class BuyInsuranceServiceImpl implements BuyInsuranceService {
 	public Customer findById(int id) {
 		return buyInsuranceRepo.findById(id);
 }
+	
+	@Override
+	public List<InsurancePlan> getAllInsurancePlan(){
+		List<InsurancePlan> list = buyInsuranceRepo.getAllInsuranceData();
+		return list;
+}
+	
 	
 }
