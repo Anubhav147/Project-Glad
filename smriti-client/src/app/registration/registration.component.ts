@@ -34,10 +34,6 @@ datadto: DataDto = new DataDto();
     
    this.customerService.register(this.customer).subscribe(data =>{
       if (data.status == 'SUCCESS') {
-        // Verify your email address and re-login
-        // Show registration successfull
-        //alert(JSON.stringify(data));
-        //this.router.navigate(['login']);
         this.router.navigate(['login']);
       }
       else{

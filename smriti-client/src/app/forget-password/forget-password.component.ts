@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ForgotPasswordService } from './forgot-password.service';
 
 @Component({
   selector: 'app-forget-password',
@@ -7,14 +8,25 @@ import { Router } from '@angular/router';
   styleUrls: ['./forget-password.component.css']
 })
 export class ForgetPasswordComponent implements OnInit {
-
-  constructor(private router : Router) { }
+  email:string
+  
+  constructor(private router : Router, private service:ForgotPasswordService) { }
 
   ngOnInit(): void {
   }
 
   goToOtp(){
-    this.router.navigate(['otp']);
+    this.service.sendOtp(this.email).subscribe(dataDto =>{
+      let data:any;
+      data = dataDto
+      if(data.status == 'SUCCESS'){ 
+        sessionStorage.setItem('forgotEmail', data.emailId)
+        this.router.navigate(['otp']);
+    }
+    else{
+      window.location.reload();
+    }
+  })
   }
 
 }

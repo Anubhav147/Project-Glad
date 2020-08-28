@@ -18,6 +18,8 @@ import { ContactComponent } from './contact/contact.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { OtpComponent } from './otp/otp.component';
 import { AboutComponent } from './about/about.component';
+import { AvailablePlansComponent } from './available-plans/available-plans.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 const routes: Routes = [
   {path: 'renew', component: RenewComponent},
   {path: 'plans', component: PlansComponent},
@@ -36,7 +38,9 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent},
   { path: 'otp', component: OtpComponent },
   { path: 'forgetPassword', component: ForgetPasswordComponent },
-  { path: 'about', component: AboutComponent }
+  { path: 'about', component: AboutComponent },
+  { path: 'availablePlans', component: AvailablePlansComponent },
+  { path: 'resetPassword', component: ResetPasswordComponent }
   //{path: 'plan-select', component: PlanSelectComponent}
 ];
 

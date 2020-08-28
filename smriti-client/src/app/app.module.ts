@@ -27,6 +27,8 @@ import { ContactComponent } from './contact/contact.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { OtpComponent } from './otp/otp.component';
 import { AboutComponent } from './about/about.component';
+import { AvailablePlansComponent } from './available-plans/available-plans.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +53,9 @@ import { AboutComponent } from './about/about.component';
     ContactComponent,
     ForgetPasswordComponent,
     OtpComponent,
-    AboutComponent
+    AboutComponent,
+    AvailablePlansComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,

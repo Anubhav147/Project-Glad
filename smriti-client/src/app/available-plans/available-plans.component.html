@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LTI Insurance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+  <section class="team">
+     <div class="container">
+          <form>
+        <div class="card" *ngFor = "let p of plan">
+            <div class="box" *ngIf = "p">
+                <img src="../../assets/image/img6.jpg" alt="team img" />
+                <h4>Name: {{p.name}}</h4>
+                <h5>Type: {{p.type}}</h5>
+                <h5>Company: {{p.companyName}}</h5>
+                <h5>Amount: {{p.amount}}</h5>
+                <input type="radio" name="">
+            </div>
+
+        </div>
+        <input (click)="selectPlan()" type="submit" name="submit" class="btn">
+        </form>
+          
+         
+     </div>
+  </section>
+
+</body>
+</html>

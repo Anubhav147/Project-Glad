@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { OtpService } from './otp.service';
 
 @Component({
   selector: 'app-otp',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OtpComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private router:Router, private service:OtpService) { }
+  otp:string
   ngOnInit(): void {
   }
+
+    verifyOtp(){
+      this.service.verifyOtp(this.otp).subscribe(dataDto =>{
+      let data:any;
+      data = dataDto
+      if(data.status == 'SUCCESS'){ 
+        sessionStorage.setItem('forgotEmail', data.emailId)
+        this.router.navigate(['otp']);
+    }
+    else{
+      this.router.navigate(['forgetPassword'])
+    }
+  })
+}
 
 }
