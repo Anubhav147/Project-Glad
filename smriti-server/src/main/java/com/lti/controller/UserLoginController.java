@@ -60,7 +60,7 @@ public class UserLoginController {
 		}
 
 	}
-
+/*
 	@PostMapping(path = "/admin/login", consumes = "application/json", produces = "application/json")
 	public LoginStatusDto adminLogin(@RequestBody LoginDto loginDto) {
 
@@ -96,6 +96,6 @@ public class UserLoginController {
 			return status;
 		}
 
-	}
+	}*/
 
 }
